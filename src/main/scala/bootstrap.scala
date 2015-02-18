@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory
 
 
 object bootStrap {
-  val logger = LoggerFactory.getLogger("bootstrap")
+  val logger = LoggerFactory.getLogger(this.getClass.getSimpleName)
 
   /**
    * bootstraps program
@@ -36,7 +36,7 @@ object bootStrap {
    * @param name - string representation of file name, minus the extension
    */
     def solutionRunner(name: String): Unit = {
-      // create instancers of class, class object, and solution method
+      // create instances of class, class object, and solution method
       val classLoader = this.getClass.getClassLoader
       val clazz = classLoader.loadClass(name)
       val solutionMethod = clazz.getDeclaredMethod("solution")
