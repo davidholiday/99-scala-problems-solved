@@ -4,7 +4,7 @@
 		module="99_scala_problems$sources_javadoc_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20150217102133"
+		publication="20150218092951"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -27,6 +27,14 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.5" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);scala-tool->default(compile)" info.apiURL="http://www.scala-lang.org/api/2.11.5/">
 			<artifact name="scala-library" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="scala-library" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-io" rev="1.3.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="commons-io" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="commons-io" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="commons-io" name="commons-io" rev="1.3.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="commons-io" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="commons-io" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.5" transitive="false" conf="scala-tool->default(compile)">
 			<artifact name="scala-compiler" type="src" ext="jar" conf="sources" e:classifier="sources"/>

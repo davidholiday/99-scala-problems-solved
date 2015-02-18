@@ -1,6 +1,6 @@
 [debug] Other repositories:
 [debug] Default repositories:
-[debug] 	Raw(ProjectResolver(inter-project, mapped: ))
+[debug] 	Raw(ProjectResolver(inter-project, mapped: default#global-plugins;0.0))
 [debug] 	URLRepository(typesafe-ivy-releases,Patterns(ivyPatterns=List(http://repo.typesafe.com/typesafe/ivy-releases/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(http://repo.typesafe.com/typesafe/ivy-releases/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false))
 [debug] 	URLRepository(sbt-plugin-releases,Patterns(ivyPatterns=List(http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false))
 [debug] 	FileRepository(local,FileConfiguration(true,None),Patterns(ivyPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false))
@@ -563,9 +563,40 @@
 [debug] == resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->compile]
 [debug] == resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->master]
 [debug] == resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-sbt#interface;0.13.5 [compile->default(compile)]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->default(compile)]
+[info] Resolving com.github.mpeltonen#sbt-idea;1.6.0 ...
+[debug] sbt-chain: Checking cache for: dependency: com.github.mpeltonen#sbt-idea;1.6.0 {default=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: com.github.mpeltonen#sbt-idea;1.6.0
+[debug] 	typesafe-ivy-releases: revision in cache: com.github.mpeltonen#sbt-idea;1.6.0
+[debug] 	found com.github.mpeltonen#sbt-idea;1.6.0 in sbt-chain
+[debug] 	[1.6.0] com.github.mpeltonen#sbt-idea;1.6.0
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->runtime]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->compile]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->master(*)]
+[info] Resolving commons-io#commons-io;2.0.1 ...
+[debug] sbt-chain: Checking cache for: dependency: commons-io#commons-io;2.0.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: commons-io#commons-io;2.0.1
+[debug] 	typesafe-ivy-releases: revision in cache: commons-io#commons-io;2.0.1
+[debug] 	found commons-io#commons-io;2.0.1 in sbt-chain
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->compile(*)]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->runtime(*)]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->compile]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->default(compile)]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->runtime]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->compile]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->master]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->runtime(*)]
+[debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->compile]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->master]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->default(compile)]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->runtime]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->compile]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.5!sbt.jar
+[debug] 	[NOT REQUIRED] com.github.mpeltonen#sbt-idea;1.6.0!sbt-idea.jar
+[debug] 	[NOT REQUIRED] commons-io#commons-io;2.0.1!commons-io.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.4!scala-library.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#main;0.13.5!main.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.5!compiler-interface-bin.jar
@@ -611,9 +642,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.5!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar
-[debug] :: resolution report :: resolve 377ms :: artifacts dl 25ms
+[debug] :: resolution report :: resolve 942ms :: artifacts dl 30ms
 [debug] 	report for 99_scala_problems#99_scala_problems$sbt_2.11;1.0 default produced in /Users/snerd/IdeaProjects/99_Scala_problems/target/resolution-cache/reports/99_scala_problems-99_scala_problems$sbt_2.11-default.xml
-[debug] 	resolve done (377ms resolve - 25ms download)
+[debug] 	resolve done (942ms resolve - 30ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: 99_scala_problems#99_scala_problems$sources_2.11;1.0
 [debug] 	confs: [default]
@@ -909,6 +940,25 @@
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#precompiled-2_9_3;0.13.5
 [debug] 	typesafe-ivy-releases: revision in cache: org.scala-sbt#precompiled-2_9_3;0.13.5
 [debug] 	found org.scala-sbt#precompiled-2_9_3;0.13.5 in sbt-chain
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->default(compile)]
+[info] Resolving com.github.mpeltonen#sbt-idea;1.6.0 ...
+[debug] sbt-chain: Checking cache for: dependency: com.github.mpeltonen#sbt-idea;1.6.0 {default=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: com.github.mpeltonen#sbt-idea;1.6.0
+[debug] 	typesafe-ivy-releases: revision in cache: com.github.mpeltonen#sbt-idea;1.6.0
+[debug] 	found com.github.mpeltonen#sbt-idea;1.6.0 in sbt-chain
+[debug] 	[1.6.0] com.github.mpeltonen#sbt-idea;1.6.0
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->runtime]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->compile]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->master]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->default(compile)]
+[info] Resolving commons-io#commons-io;2.0.1 ...
+[debug] sbt-chain: Checking cache for: dependency: commons-io#commons-io;2.0.1 {default=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: commons-io#commons-io;2.0.1
+[debug] 	typesafe-ivy-releases: revision in cache: commons-io#commons-io;2.0.1
+[debug] 	found commons-io#commons-io;2.0.1 in sbt-chain
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->runtime]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->compile]
+[debug] == resolving dependencies 99_scala_problems#99_scala_problems$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.5!sbt.jar(src)
@@ -955,6 +1005,28 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.5!precompiled-2_8_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.5!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.5!precompiled-2_9_3.jar(src)
-[debug] :: resolution report :: resolve 220ms :: artifacts dl 35ms
+[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/com.github.mpeltonen/sbt-idea/scala_2.10/sbt_0.13/1.6.0/srcs/sbt-idea-sources.jar
+[debug] CLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/com.github.mpeltonen/sbt-idea/scala_2.10/sbt_0.13/1.6.0/srcs/sbt-idea-sources.jar
+[debug] 		tried http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.github.mpeltonen/sbt-idea/scala_2.10/sbt_0.13/1.6.0/srcs/sbt-idea-sources.jar
+[debug] CLIENT ERROR: Not Found url=http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.github.mpeltonen/sbt-idea/scala_2.10/sbt_0.13/1.6.0/srcs/sbt-idea-sources.jar
+[debug] 		tried /Users/snerd/.ivy2/local/com.github.mpeltonen/sbt-idea/scala_2.10/sbt_0.13/1.6.0/srcs/sbt-idea-sources.jar
+[debug] 		tried http://repo1.maven.org/maven2/com/github/mpeltonen/sbt-idea_2.10_0.13/1.6.0/sbt-idea-1.6.0-sources.jar
+[info] downloading http://repo1.maven.org/maven2/com/github/mpeltonen/sbt-idea_2.10_0.13/1.6.0/sbt-idea-1.6.0-sources.jar ...
+[debug] 	public: downloading http://repo1.maven.org/maven2/com/github/mpeltonen/sbt-idea_2.10_0.13/1.6.0/sbt-idea-1.6.0-sources.jar
+[debug] 	public: downloading http://repo1.maven.org/maven2/com/github/mpeltonen/sbt-idea_2.10_0.13/1.6.0/sbt-idea-1.6.0-sources.jar.sha1
+[debug] sha1 OK for http://repo1.maven.org/maven2/com/github/mpeltonen/sbt-idea_2.10_0.13/1.6.0/sbt-idea-1.6.0-sources.jar
+[info] 	[SUCCESSFUL ] com.github.mpeltonen#sbt-idea;1.6.0!sbt-idea.jar(src) (617ms)
+[debug] 		tried http://repo.typesafe.com/typesafe/ivy-releases/commons-io/commons-io/2.0.1/srcs/commons-io-sources.jar
+[debug] CLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/commons-io/commons-io/2.0.1/srcs/commons-io-sources.jar
+[debug] 		tried http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/commons-io/commons-io/2.0.1/srcs/commons-io-sources.jar
+[debug] CLIENT ERROR: Not Found url=http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/commons-io/commons-io/2.0.1/srcs/commons-io-sources.jar
+[debug] 		tried /Users/snerd/.ivy2/local/commons-io/commons-io/2.0.1/srcs/commons-io-sources.jar
+[debug] 		tried http://repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1-sources.jar
+[info] downloading http://repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1-sources.jar ...
+[debug] 	public: downloading http://repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1-sources.jar
+[debug] 	public: downloading http://repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1-sources.jar.sha1
+[debug] sha1 OK for http://repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1-sources.jar
+[info] 	[SUCCESSFUL ] commons-io#commons-io;2.0.1!commons-io.jar(src) (573ms)
+[debug] :: resolution report :: resolve 225ms :: artifacts dl 2017ms
 [debug] 	report for 99_scala_problems#99_scala_problems$sources_2.11;1.0 default produced in /Users/snerd/IdeaProjects/99_Scala_problems/target/resolution-cache/reports/99_scala_problems-99_scala_problems$sources_2.11-default.xml
-[debug] 	resolve done (220ms resolve - 35ms download)
+[debug] 	resolve done (225ms resolve - 2017ms download)

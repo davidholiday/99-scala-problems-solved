@@ -7,16 +7,24 @@
  */
 
 import java.io.File
+import org.apache.commons.io.FilenameUtils
 
+
+/**
+ * boodstraps program
+ */
 object bootStrap {
 
     def main(args: Array[String]): Unit = {
+      
+      // go through solution files and execute
+      for (fName <- getSolutionFiles(new File("./src/main/resources"))) {
+        println(FilenameUtils.removeExtension(fName.getName))
 
-      for (fName <- getFileList(new File("./src/main/resources"))) {
-        println(fName.getName )
       }
 
     }
+
 
 
   /**
@@ -29,9 +37,35 @@ object bootStrap {
    * @return targetFileList - Array[java.io.File] - list of file objects
    *         that have names starting with "sp_"
    */
-    def getFileList(f: File): Array[File] = {
+    def getSolutionFiles(f: File): Array[File] = {
+      // create lists of files, directories, and target files
+      val fullFileList = f.listFiles
+      val targetFileList = fullFileList.filter(_.getName.matches("^sp_.*"))
+      val dirList = fullFileList.filter(_.isDirectory)
+
+      // recursively append target files located in sub directories to list.
+      // return populated list to caller.
+      targetFileList ++ dirList.flatMap(getSolutionFiles)
+    }
+
+
+
+
+
+
+  /**
+   * trolls through working directory and all sub directories in search of files
+   * with names starting with "sp_" ('sp' for 'scala problem'). thanks to
+   * stack overflow for base code: http://stackoverflow.com/questions/2637643/
+   * how-do-i-list-all-files-in-a-subdirectory-in-scala
+   *
+   * @param f - java File object
+   * @return targetFileList - Array[java.io.File] - list of file objects
+   *         that have names starting with "sp_"
+   *
+             def getFileList(f: File): Array[File] = {
       // get file list, filter that list by checking filename against regex
-      val targetFileList = f.listFiles().filter(_.getName().matches("^sp_.*"))
+      val targetFileList = f.listFiles.filter(_.getName.matches("^sp_.*"))
 
       // get a list of subdirectories in current directory
       val dirList = f.listFiles.filter(_.isDirectory)
@@ -42,13 +76,14 @@ object bootStrap {
 
       targetFileList ++ f.listFiles.filter(_.isDirectory).flatMap(getFileList)
     }
+   */
 
 
-    def getFileListTwo(f: File): Array[File] = {
-      val targetFileListAll
 
 
-    }
+
+
+
 
 
 }
