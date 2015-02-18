@@ -8,21 +8,41 @@
 
 import java.io.File
 import org.apache.commons.io.FilenameUtils
+import org.slf4j.LoggerFactory
 
 
-/**
- * boodstraps program
- */
 object bootStrap {
+  val logger = LoggerFactory.getLogger("bootstrap")
 
+  /**
+   * bootstraps program
+   */
     def main(args: Array[String]): Unit = {
-      
-      // go through solution files and execute
-      for (fName <- getSolutionFiles(new File("./src/main/resources"))) {
-        println(FilenameUtils.removeExtension(fName.getName))
 
+      // go through solution files and execute
+      for (fName <- getSolutionFiles(new File("./src/main/scala"))) {
+        val fNameNoExtS = FilenameUtils.removeExtension(fName.getName)
+        logger.info("processing: " + fNameNoExtS)
+        solutionRunner(fNameNoExtS)
       }
 
+    }
+
+
+  /**
+   * takes the filename, converts it into an object and runs the 'solution'
+   * method.
+   *
+   * @param name - string representation of file name, minus the extension
+   */
+    def solutionRunner(name: String): Unit = {
+      // create instancers of class, class object, and solution method
+      val classLoader = this.getClass.getClassLoader
+      val clazz = classLoader.loadClass(name)
+      val solutionMethod = clazz.getDeclaredMethod("solution")
+
+      // execute solution method
+      solutionMethod.invoke(clazz.newInstance)
     }
 
 
@@ -47,43 +67,6 @@ object bootStrap {
       // return populated list to caller.
       targetFileList ++ dirList.flatMap(getSolutionFiles)
     }
-
-
-
-
-
-
-  /**
-   * trolls through working directory and all sub directories in search of files
-   * with names starting with "sp_" ('sp' for 'scala problem'). thanks to
-   * stack overflow for base code: http://stackoverflow.com/questions/2637643/
-   * how-do-i-list-all-files-in-a-subdirectory-in-scala
-   *
-   * @param f - java File object
-   * @return targetFileList - Array[java.io.File] - list of file objects
-   *         that have names starting with "sp_"
-   *
-             def getFileList(f: File): Array[File] = {
-      // get file list, filter that list by checking filename against regex
-      val targetFileList = f.listFiles.filter(_.getName.matches("^sp_.*"))
-
-      // get a list of subdirectories in current directory
-      val dirList = f.listFiles.filter(_.isDirectory)
-
-      for (dName <- dirList) {
-        println("searching for solutions in directory: " + dName)
-      }
-
-      targetFileList ++ f.listFiles.filter(_.isDirectory).flatMap(getFileList)
-    }
-   */
-
-
-
-
-
-
-
 
 
 }
