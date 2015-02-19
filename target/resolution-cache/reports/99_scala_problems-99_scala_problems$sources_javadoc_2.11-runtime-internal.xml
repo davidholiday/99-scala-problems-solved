@@ -7,25 +7,8 @@
 		revision="1.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20150219094352"/>
+		date="20150219130227"/>
 	<dependencies>
-		<module organisation="org.slf4j" name="slf4j-simple">
-			<revision name="1.7.10" status="release" pubdate="20150106121131" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="6">
-				<metadata-artifact status="no" details="" size="4700" time="0" location="/Users/snerd/.ivy2/cache/org.slf4j/slf4j-simple/ivy-1.7.10.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.10/slf4j-simple-1.7.10.pom"/>
-				<caller organisation="99_scala_problems" name="99_scala_problems$sources_javadoc_2.11" conf="compile, runtime-internal, runtime, optional" rev="1.7.10" rev-constraint-default="1.7.10" rev-constraint-dynamic="1.7.10" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="slf4j-simple" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="63578" time="0" location="/Users/snerd/.ivy2/cache/org.slf4j/slf4j-simple/docs/slf4j-simple-1.7.10-javadoc.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.10/slf4j-simple-1.7.10-javadoc.jar"/>
-					</artifact>
-					<artifact name="slf4j-simple" type="jar" ext="jar" status="no" details="" size="10705" time="0" location="/Users/snerd/.ivy2/cache/org.slf4j/slf4j-simple/jars/slf4j-simple-1.7.10.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.10/slf4j-simple-1.7.10.jar"/>
-					</artifact>
-					<artifact name="slf4j-simple" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="11525" time="0" location="/Users/snerd/.ivy2/cache/org.slf4j/slf4j-simple/srcs/slf4j-simple-1.7.10-sources.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.10/slf4j-simple-1.7.10-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
 		<module organisation="org.slf4j" name="slf4j-api">
 			<revision name="1.7.10" status="release" pubdate="20150106121107" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="5">
 				<metadata-artifact status="no" details="" size="4661" time="0" location="/Users/snerd/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.10.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom"/>

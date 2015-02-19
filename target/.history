@@ -29,3 +29,8 @@ sbt-idea
 idea
 gen-idea
 exit
+compile
+genIdea
+gen-idea
+quit
+exit

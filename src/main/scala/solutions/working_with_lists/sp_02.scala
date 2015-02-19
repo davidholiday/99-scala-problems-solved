@@ -21,7 +21,7 @@ class sp_02 extends spMeta {
 
   def getSolution(): solutionT = {
     val listSizeI = input.length
-    return input(listSizeI -2)
+    input(listSizeI -2)
   }
 
   def checkSolution(solution: solutionT): Unit = {
