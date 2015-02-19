@@ -6,15 +6,17 @@
  * FEB'15 David Holiday
  */
 abstract class spMeta extends logging {
-  type T
+  type inputT
+  type solutionT
 
+  val input: inputT
 
-  def solveAndCheck = {
+  def solveAndCheck(): Unit = {
     getSolution
     checkSolution(getSolution)
   }
 
-  def getSolution: T
+  def getSolution: solutionT
 
-  def checkSolution(solution: T)
+  def checkSolution(solution: solutionT)
 }

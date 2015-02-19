@@ -15,14 +15,18 @@
 
 
 class sp_01 extends spMeta {
-  val testList = List(1, 1, 2, 3, 5, 8)
+  type inputT = List[Int]
+  type solutionT = Int
+
+  val input = List(1, 1, 2, 3, 5, 8)
 
 
-  def getSolution(): T = {
-    testList.last
+  def getSolution(): solutionT = {
+    input.last
   }
 
-  def checkSolution(solution: T): Unit = {
+  def checkSolution(solution: solutionT): Unit = {
     assert(solution == 8)
   }
+
 }

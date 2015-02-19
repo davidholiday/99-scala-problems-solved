@@ -13,15 +13,19 @@
  *
  */
 
-class sp_02 extends logging {
-  val testList = List(1, 1, 2, 3, 5, 8)
+class sp_02 extends spMeta {
+  type inputT = List[Int]
+  type solutionT = Int
 
-  def solution(): Unit = {
-    val listSizeI = testList.length
-    val answerI = testList(listSizeI -2)
+  val input = List(1, 1, 2, 3, 5, 8)
 
+  def getSolution(): solutionT = {
+    val listSizeI = input.length
+    return input(listSizeI -2)
+  }
 
-    assert(answerI == 5)
+  def checkSolution(solution: solutionT): Unit = {
+    assert(solution == 5)
   }
 
 }

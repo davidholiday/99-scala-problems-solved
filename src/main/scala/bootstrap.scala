@@ -37,7 +37,8 @@ object bootStrap extends logging {
       // create instances of class, class object, and solution method
       val classLoader = this.getClass.getClassLoader
       val clazz = classLoader.loadClass(name)
-      val solutionMethod = clazz.getDeclaredMethod("solveAndCheck")
+      val solutionMethod =
+          clazz.getSuperclass.getDeclaredMethod("solveAndCheck")
 
       // execute solution method
       solutionMethod.invoke(clazz.newInstance)
@@ -48,7 +49,9 @@ object bootStrap extends logging {
   /**
    * trolls through working directory and all sub directories in search of files
    * with names starting with "sp_" ('sp' for 'scala problem'). thanks to
-   * stack overflow for base code: http://stackoverflow.com/questions/2637643/
+   * Thanks to user {@link http://stackoverflow.com/users/247533/rex-kerr
+   * Rex-Kerr} for base code:
+   * http://stackoverflow.com/questions/2637643/
    * how-do-i-list-all-files-in-a-subdirectory-in-scala
    *
    * @param f - java File object
