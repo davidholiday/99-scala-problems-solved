@@ -1,3 +1,4 @@
+
 /**
  * scala problem 02 of set s-99
  * http://aperiodic.net/phil/scala/s-99/
@@ -12,10 +13,7 @@
  *
  */
 
-import org.slf4j.LoggerFactory
-
-class sp_02 {
-  val logger = LoggerFactory.getLogger(this.getClass.getSimpleName)
+class sp_02 extends logging {
   val testList = List(1, 1, 2, 3, 5, 8)
 
   def solution(): Unit = {

@@ -8,11 +8,9 @@
 
 import java.io.File
 import org.apache.commons.io.FilenameUtils
-import org.slf4j.LoggerFactory
 
 
-object bootStrap {
-  val logger = LoggerFactory.getLogger(this.getClass.getSimpleName)
+object bootStrap extends logging {
 
   /**
    * bootstraps program
@@ -39,7 +37,7 @@ object bootStrap {
       // create instances of class, class object, and solution method
       val classLoader = this.getClass.getClassLoader
       val clazz = classLoader.loadClass(name)
-      val solutionMethod = clazz.getDeclaredMethod("solution")
+      val solutionMethod = clazz.getDeclaredMethod("solveAndCheck")
 
       // execute solution method
       solutionMethod.invoke(clazz.newInstance)

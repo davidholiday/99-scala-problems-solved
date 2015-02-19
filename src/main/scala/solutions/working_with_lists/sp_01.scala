@@ -1,3 +1,4 @@
+
 /**
  * scala problem 01 of set s-99
  * http://aperiodic.net/phil/scala/s-99/
@@ -12,15 +13,16 @@
  *
  */
 
-import org.slf4j.LoggerFactory
 
-class sp_01 {
-  val logger = LoggerFactory.getLogger(this.getClass.getSimpleName)
+class sp_01 extends spMeta {
   val testList = List(1, 1, 2, 3, 5, 8)
 
-  def solution(): Unit = {
-    val answerI = testList.last
-    assert(answerI == 8)
+
+  def getSolution(): T = {
+    testList.last
   }
 
+  def checkSolution(solution: T): Unit = {
+    assert(solution == 8)
+  }
 }
