@@ -13,7 +13,7 @@
  */
 
 
-class sp_06 extends spMeta{
+class sp_06 extends spMeta {
 
   type inputT = List[Int]
   type solutionT = Boolean
