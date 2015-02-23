@@ -14,6 +14,8 @@
  *
  * feb'15 david holiday
  *
+ * *NOTE* clearly I didn't notice the List[A].span function when I wrote this!
+ *
  */
 
 
@@ -48,7 +50,7 @@ class Sp09 extends SpMeta {
         // combine head with the full sequence in tail matching head.
         // combine result with result of recursive call to function using
         // remaining elements of tail (everything after the matching sequence)
-        // as a parameter. 
+        // as a parameter.
         (h :: tail.dropRight(seqDropPointRightI)) ::
             splitIntoSubLists(tail.drop(endOfRunLeftI))
       }
