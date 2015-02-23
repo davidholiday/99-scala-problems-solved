@@ -13,14 +13,14 @@
  */
 
 
-class sp_07 extends spMeta {
+class Sp07 extends SpMeta {
 
   type inputT = List[Any]
   type solutionT = List[Any]
 
   val input = List(List(List(1, 1), 2, List(3, List(5, 8))))
 
-  def getSolution(): solutionT = {
+  def getSolution: solutionT = {
     flatten(input)
   }
 

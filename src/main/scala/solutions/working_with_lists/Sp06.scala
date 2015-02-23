@@ -13,14 +13,14 @@
  */
 
 
-class sp_06 extends spMeta {
+class Sp06 extends SpMeta {
 
   type inputT = List[Int]
   type solutionT = Boolean
 
   val input = List(1, 2, 3, 2, 1)
 
-  def getSolution(): solutionT = {
+  def getSolution: solutionT = {
     // create sublists out of the first and last half of the input list.
     // if list length is odd, this still works because putting the answer into
     // an Int container gives us the rounded-down whole number.

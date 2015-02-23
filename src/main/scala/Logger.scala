@@ -1,8 +1,9 @@
 /**
- * Created by snerd on 2/18/15.
+ * simple logging trait
+ * feb '15 david holiday
  */
 import org.slf4j.LoggerFactory
 
-trait logging {
+trait Logger {
   val logger = LoggerFactory.getLogger(this.getClass.getSimpleName)
 }

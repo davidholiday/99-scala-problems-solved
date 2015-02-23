@@ -5,14 +5,13 @@
  *
  * FEB'15 David Holiday
  */
-abstract class spMeta extends logging {
+abstract class SpMeta extends Logger {
   type inputT
   type solutionT
 
   val input: inputT
 
-  def solveAndCheck(): Unit = {
-    getSolution
+  def solveAndCheck: Unit = {
     checkSolution(getSolution)
   }
 

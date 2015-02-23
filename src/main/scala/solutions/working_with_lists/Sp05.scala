@@ -12,14 +12,14 @@
  *
  */
 
-class sp_05 extends spMeta {
+class Sp05 extends SpMeta {
 
   type inputT = List[Int]
   type solutionT = List[Int]
 
   val input = List(1, 1, 2, 3, 5, 8)
 
-  def getSolution(): solutionT = {
+  def getSolution: solutionT = {
     input.reverse
   }
 

@@ -10,7 +10,7 @@ import java.io.File
 import org.apache.commons.io.FilenameUtils
 
 
-object bootStrap extends logging {
+object Bootstrap extends Logger {
 
   /**
    * bootstraps program
@@ -61,7 +61,7 @@ object bootStrap extends logging {
     def getSolutionFiles(f: File): Array[File] = {
       // create lists of files, directories, and target files
       val fullFileList = f.listFiles
-      val targetFileList = fullFileList.filter(_.getName.matches("^sp_.*"))
+      val targetFileList = fullFileList.filter(_.getName.matches("^Sp[0-9]+.*"))
       val dirList = fullFileList.filter(_.isDirectory)
 
       // recursively append target files located in sub directories to list.

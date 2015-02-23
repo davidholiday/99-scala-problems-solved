@@ -13,13 +13,13 @@
  *
  */
 
-class sp_02 extends spMeta {
+class Sp02 extends SpMeta {
   type inputT = List[Int]
   type solutionT = Int
 
   val input = List(1, 1, 2, 3, 5, 8)
 
-  def getSolution(): solutionT = {
+  def getSolution: solutionT = {
     val listSizeI = input.length
     input(listSizeI -2)
   }
