@@ -4,7 +4,7 @@
 		module="99_scala_problems$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20150223092134"
+		publication="20150224092847"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>
