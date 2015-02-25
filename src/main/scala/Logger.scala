@@ -1,3 +1,5 @@
+package solutions
+
 /**
  * simple logging trait
  * feb '15 david holiday

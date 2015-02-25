@@ -1,3 +1,7 @@
+package solutions.working_with_lists
+
+import solutions._
+
 /**
  * scala problem 08 of set s-99
  * http://aperiodic.net/phil/scala/s-99/

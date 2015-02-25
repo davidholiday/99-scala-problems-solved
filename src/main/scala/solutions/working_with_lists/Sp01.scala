@@ -1,3 +1,6 @@
+package solutions.working_with_lists
+
+import solutions._
 
 /**
  * scala problem 01 of set s-99

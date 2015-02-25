@@ -1,3 +1,8 @@
+package solutions
+
+import java.io.File
+import org.apache.commons.io.FilenameUtils
+
 /**
  * testrunner for 99 scala problem solutions.
  *
@@ -6,8 +11,7 @@
  * FEB'15 David Holiday
  */
 
-import java.io.File
-import org.apache.commons.io.FilenameUtils
+
 
 
 object Bootstrap extends Logger {
@@ -18,13 +22,41 @@ object Bootstrap extends Logger {
     def main(args: Array[String]): Unit = {
 
       // go through solution files and execute
-      for (fName <- getSolutionFiles(new File("./src/main/scala"))) {
-        val fNameNoExtS = FilenameUtils.removeExtension(fName.getName)
-        logger.info("processing: " + fNameNoExtS)
-        solutionRunner(fNameNoExtS)
+      for (file <- getSolutionFiles(new File("./src/main/scala"))) {
+        val fQclassName = makeFqClassName(file)
+        logger.info("processing: " + fQclassName)
+        solutionRunner(fQclassName)
       }
 
     }
+
+  /**
+   * takes a file object and returns a string representing the fully qualified
+   * class name represented by that file.
+   *
+   * @param file
+   * @return string representation of the fully qualified class name
+   */
+  def makeFqClassName(file: File): String = {
+    // pull out the file name - we'll use this for our class name
+    val fNameNoExtS = FilenameUtils.removeExtension(file.getName)
+
+    // extract only the path
+    val fPathOnlyS =
+      file.getPath.substring(0, file.getPath.lastIndexOf(File.separator))
+
+    // create a list of the path name, minus the delimiter
+    val fPathDelimList: List[String] = fPathOnlyS.split("/").toList
+
+    // truncate the list to include on the class name info
+    val fqNameList: List[String] =
+      fPathDelimList.drop(fPathDelimList.lastIndexOf("solutions"))
+
+    // convert the list to a string representation of a class name and return
+    // to caller
+    fqNameList.mkString(".") + "." + fNameNoExtS
+  }
+
 
 
   /**

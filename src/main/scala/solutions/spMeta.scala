@@ -1,3 +1,5 @@
+package solutions
+
 /**
  * root class def for all solution files (sp_* files). gives all solution files
  * access to a logger and forces a common protocol across the entire corpus of
