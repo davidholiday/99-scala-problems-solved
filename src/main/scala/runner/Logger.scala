@@ -1,4 +1,4 @@
-package solutions
+package runner
 
 /**
  * simple logging trait

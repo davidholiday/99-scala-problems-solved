@@ -1,6 +1,7 @@
-package solutions
+package runner
 
 import java.io.File
+
 import org.apache.commons.io.FilenameUtils
 
 /**

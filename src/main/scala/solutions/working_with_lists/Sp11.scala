@@ -29,7 +29,7 @@ class Sp11 extends SpMeta {
   val input = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
 
   def getSolution: solutionT = {
-    new Sp10 splitAndGroup(input)
+    new Sp10 splitAndGroup(input) map { t => if (t._1 == 1) t._2 else t }
   }
 
   def checkSolution(solution: solutionT): Unit = {
