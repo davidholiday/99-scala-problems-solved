@@ -1,6 +1,6 @@
 package solutions.working_with_lists
 
-import solutions._
+import solutions.SpMeta
 
 
 /**
