@@ -31,6 +31,7 @@ object Bootstrap extends Logger {
 
     }
 
+
   /**
    * takes a file object and returns a string representing the fully qualified
    * class name represented by that file.
@@ -56,6 +57,31 @@ object Bootstrap extends Logger {
     // convert the list to a string representation of a class name and return
     // to caller
     fqNameList.mkString(".") + "." + fNameNoExtS
+  }
+
+
+  /**
+   * does the same thing as makeFqClassName2 - this in response to my SE query:
+   * http://codereview.stackexchange.com/
+   *  questions/82615/file-to-fully-qualified-class-name-function/82849#82849
+   *
+   * from user:
+   * http://codereview.stackexchange.com/users/50769/vertere
+   *
+   * regarding ways to refactor makeFqClassName more scala-tastic. i like what
+   * this code is doing so i'm leaving it in here, even though it's never
+   * called. the only issue is that if, for some reason, the Spxx files are
+   * nested more deeply in the directory structure, this function won't pick
+   * it up.
+   *
+   * @param file
+   * @return
+   */
+  def makeFqClassName2(file: File): String = {
+    val fileName :: _ = file.getName.split('.').toList
+    val upDir :: upUpDir :: _ =
+      file.getParent.split(File.separator(0)).toList.reverse
+    s"$upUpDir.$upDir.$fileName"
   }
 
 
