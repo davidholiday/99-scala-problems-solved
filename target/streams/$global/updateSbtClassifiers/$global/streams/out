@@ -642,9 +642,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.5!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar
-[debug] :: resolution report :: resolve 1793ms :: artifacts dl 126ms
+[debug] :: resolution report :: resolve 2149ms :: artifacts dl 96ms
 [debug] 	report for 99_scala_problems#99_scala_problems$sbt_2.11;1.0 default produced in /Users/snerd/IdeaProjects/99_Scala_problems/target/resolution-cache/reports/99_scala_problems-99_scala_problems$sbt_2.11-default.xml
-[debug] 	resolve done (1793ms resolve - 126ms download)
+[debug] 	resolve done (2149ms resolve - 96ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: 99_scala_problems#99_scala_problems$sources_2.11;1.0
 [debug] 	confs: [default]
@@ -1007,6 +1007,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.5!precompiled-2_9_3.jar(src)
 [debug] 	[NOT REQUIRED] com.github.mpeltonen#sbt-idea;1.6.0!sbt-idea.jar(src)
 [debug] 	[NOT REQUIRED] commons-io#commons-io;2.0.1!commons-io.jar(src)
-[debug] :: resolution report :: resolve 426ms :: artifacts dl 25ms
+[debug] :: resolution report :: resolve 379ms :: artifacts dl 23ms
 [debug] 	report for 99_scala_problems#99_scala_problems$sources_2.11;1.0 default produced in /Users/snerd/IdeaProjects/99_Scala_problems/target/resolution-cache/reports/99_scala_problems-99_scala_problems$sources_2.11-default.xml
-[debug] 	resolve done (426ms resolve - 25ms download)
+[debug] 	resolve done (379ms resolve - 23ms download)
