@@ -4,7 +4,7 @@
 		module="99_scala_problems$sources_javadoc_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20150305130052"
+		publication="20150312162254"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

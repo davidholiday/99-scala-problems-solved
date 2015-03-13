@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="default"
 		confs="default"
-		date="20150305130049"/>
+		date="20150312162253"/>
 	<dependencies>
 		<module organisation="com.github.mpeltonen" name="sbt-idea">
 			<revision name="1.6.0" status="release" pubdate="20140208111446" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://your.project.url" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="45">
@@ -601,11 +601,11 @@
 		<module organisation="org.scala-lang" name="scala-reflect">
 			<revision name="2.10.4" status="release" pubdate="20140318144707" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.4/" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), runtime, compile(*), master" position="6">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
-				<metadata-artifact status="no" details="" size="2647" time="0" location="/Users/snerd/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.4/scala-reflect-2.10.4.pom"/>
+				<metadata-artifact status="no" details="" size="2829" time="0" location="/Users/snerd/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.4/scala-reflect-2.10.4.pom"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="default, compile, runtime, master" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="2.10.4"/>
 				<artifacts>
 					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3203471" time="0" location="/Users/snerd/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.4.jar">
-						<origin-location is-local="false" location="UNKNOWN"/>
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.4/scala-reflect-2.10.4.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -613,7 +613,7 @@
 		<module organisation="org.scala-lang" name="scala-library">
 			<revision name="2.10.4" status="release" pubdate="20140318144629" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.4/" downloaded="false" searched="false" default="false" conf="default, master(*), compile, runtime(*), runtime, default(compile), compile(*), master" position="1">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
-				<metadata-artifact status="no" details="" size="2487" time="0" location="/Users/snerd/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.4/scala-library-2.10.4.pom"/>
+				<metadata-artifact status="no" details="" size="2669" time="0" location="/Users/snerd/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.4/scala-library-2.10.4.pom"/>
 				<caller organisation="org.scala-sbt" name="collections" conf="compile" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="0.13.5"/>
 				<caller organisation="org.scala-sbt" name="main" conf="compile" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="0.13.5"/>
 				<caller organisation="org.scala-sbt" name="compiler-interface" conf="compile" rev="2.10.4" rev-constraint-default="2.10.4" rev-constraint-dynamic="2.10.4" callerrev="0.13.5"/>
@@ -656,7 +656,7 @@
 				<caller organisation="org.scala-sbt" name="precompiled-2_9_3" conf="compile" rev="2.9.3" rev-constraint-default="2.9.3" rev-constraint-dynamic="2.9.3" callerrev="0.13.5"/>
 				<artifacts>
 					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7126372" time="0" location="/Users/snerd/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.4.jar">
-						<origin-location is-local="false" location="UNKNOWN"/>
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.4/scala-library-2.10.4.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
