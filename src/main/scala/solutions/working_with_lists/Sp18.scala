@@ -17,6 +17,9 @@ import solutions._
  *   res0: List[Symbol] = List('d, 'e, 'f, 'g)
  *
  *  mar'15 david holiday
+ *  
+ *  ** derp -- didn't see List[T].slice in the API. leaving my solution as is,
+ *  given that it's one line of code and works
  *
  */
 
