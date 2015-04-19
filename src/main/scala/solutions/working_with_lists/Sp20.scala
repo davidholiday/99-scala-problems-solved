@@ -3,7 +3,7 @@ package solutions.working_with_lists
 import solutions._
 
 /**
- * scala problem 19 of set s-99
+ * scala problem 20 of set s-99
  * http://aperiodic.net/phil/scala/s-99/
  *
  * P20 (*) Remove the Kth element from a list.

@@ -3,7 +3,7 @@ package solutions.working_with_lists
 import solutions._
 
 /**
- * scala problem 19 of set s-99
+ * scala problem 22 of set s-99
  * http://aperiodic.net/phil/scala/s-99/
  *
  * P22 (*) Create a list containing all integers within a given range.
