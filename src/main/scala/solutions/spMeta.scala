@@ -1,6 +1,8 @@
 package solutions
 
 import runner.Logger
+import org.scalatest._
+import Matchers._
 
 /**
  * root class def for all solution files (sp_* files). gives all solution files
@@ -9,7 +11,7 @@ import runner.Logger
  *
  * FEB'15 David Holiday
  */
-abstract class SpMeta extends Logger {
+abstract class SpMeta extends Logger with Matchers {
   type inputT
   type solutionT
 

@@ -1,8 +1,8 @@
 package solutions.working_with_lists
 
 import solutions._
-import org.scalatest._
-import Matchers._
+//import org.scalatest._
+//import Matchers._
 
 /**
  * 
@@ -35,15 +35,18 @@ class Sp23 extends SpMeta {
 
   // checks for size and randomness 
   def checkSolution(solution: solutionT): Unit = {
+    //logger.info(solution + " ");
     assert(solution.size == selectNum)    
     solution should not equal randomSelect(selectNum, input)  
   }
   
   
-  // uses Sp24 lotto method to create a random list of indicies then
-  // activates buildRandomList to do the heavy lifting
-  def randomSelect(num: Int, input: List[Symbol]): List[Symbol] = {
-    val randomIndexList = new Sp24 lotto(num, input.size)
+  // builds a random list of indicies within the range alloted by the size 
+  // of the input list. then creates the list of elements.
+  def randomSelect(num: Int, input: List[Symbol]): List[Symbol] = {    
+    val indexSourceList = List.range(0, input.size)  
+    val randomIndexList = buildRandomIndexList(num, indexSourceList)
+    
     buildRandomList(randomIndexList.size - 1,
                     randomIndexList, 
                     input)
@@ -64,10 +67,30 @@ class Sp23 extends SpMeta {
     }
      
   }
+  
+  
+  // removes a single element from a list
+  // used by buildRandomIndexList to remove elements from the root index list
+  def removeIndex(index: Int, list:List[Int]): List[Int] = {
+    list diff List(index)
+  }
+  
 
-  
-  
-  
-  
+  // builds a list of random indexes 
+  def buildRandomIndexList(count: Int, 
+                           indexSourceList: List[Int]): List[Int] = {
+ //logger.info("count is: " + count);   
+    if (count < 1) Nil
+    else {
+      val randyI = scala.util.Random.nextInt(indexSourceList.size)
+      val indexI = indexSourceList(randyI)
+      
+      indexI :: 
+        buildRandomIndexList(count - 1, removeIndex(indexI, indexSourceList))
+      
+    }
+    
+  }
+    
   
 }
