@@ -79,7 +79,7 @@ class Sp23 extends SpMeta {
   // builds a list of random indexes 
   def buildRandomIndexList(count: Int, 
                            indexSourceList: List[Int]): List[Int] = {
- //logger.info("count is: " + count);   
+  
     if (count < 1) Nil
     else {
       val randyI = scala.util.Random.nextInt(indexSourceList.size)
