@@ -16,7 +16,7 @@ import solutions._
  *
  *   scala> combinations(3, List('a, 'b, 'c, 'd, 'e, 'f))
  *   res0: List[List[Symbol]] = 
- *   	List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), ...
+ *   	  List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), ...
  * 
  *   
  * aug'15 david holiday
@@ -25,4 +25,26 @@ import solutions._
 
 class Sp26 extends SpMeta {
 
+  type inputT = (Int, List[Symbol])
+  type solutionT = List[List[Symbol]]
+  
+  val input = (3, List('a, 'b, 'c, 'd, 'e, 'f))
+ 
+  def getSolution: solutionT = {
+
+  }
+
+  
+  def checkSolution(solution: solutionT): Unit = {
+    
+  }
+
+  
+  def combinations(input: inputT): solutionT = {
+      
+  }
+  
+  
+  
+  
 }
