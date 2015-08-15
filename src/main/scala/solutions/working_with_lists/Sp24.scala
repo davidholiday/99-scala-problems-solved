@@ -31,6 +31,7 @@ class Sp24 extends SpMeta {
   }
   
   // nice clean recursive method for handling this
+  // this version allows repeats
   def lotto (num:Int, maxVal:Int): List[Int] = {
     // if num = zero, stop and roll data into list
     if (num <= 0) Nil

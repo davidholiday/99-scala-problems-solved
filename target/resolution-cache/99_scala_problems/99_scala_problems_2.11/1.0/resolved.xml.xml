@@ -4,7 +4,7 @@
 		module="99_scala_problems_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20150328151038"
+		publication="20150627121925"
 	>
 		<description>
 		99_Scala_problems
@@ -38,5 +38,6 @@
 		<dependency org="ch.qos.logback" name="logback-classic" rev="1.1.2" conf="compile->default(compile)"/>
 		<dependency org="ch.qos.logback" name="logback-core" rev="1.1.2" conf="compile->default(compile)"/>
 		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.10" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.4" conf="test->default(compile)"/>
 	</dependencies>
 </ivy-module>
