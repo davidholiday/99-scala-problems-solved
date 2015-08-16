@@ -56,9 +56,10 @@ class Sp26 extends SpMeta {
 
   
   def combinations(input: inputT): solutionT = {
-      val foo = List.range(1, input._2.size + 1)
+      val twoToTheN = scala.math.pow(2, input._2.size).toInt;
+      val foo = List.range(1, twoToTheN)
         .map { x => x.toBinaryString }
-          //.filter { x => getOnesCount(x) == 3 }
+          .filter { x => getOnesCount(x) == 3 }
       
       logger.info(foo + "")
       
@@ -71,8 +72,11 @@ class Sp26 extends SpMeta {
    * thank you SO: http://stackoverflow.com/a/8910767
    * 
    */
-  def getOnesCount(line: String): Int = {
-    line.length - line.replace("0", "").length
+  def getOnesCount(line: String, nomralizedLength:Int): Int = {
+    val foo = line.length - line.replace("0", "").length
+    
+    if (foo == 3) {logger.info(foo + " " + line.length + " " + line.replace("0", "").length)};
+    return foo
   }
   
   
