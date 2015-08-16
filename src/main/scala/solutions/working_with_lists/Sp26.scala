@@ -56,30 +56,40 @@ class Sp26 extends SpMeta {
 
   
   def combinations(input: inputT): solutionT = {
-      val twoToTheN = scala.math.pow(2, input._2.size).toInt;
-      val foo = List.range(1, twoToTheN)
-        .map { x => x.toBinaryString }
+      val listSizeI = input._2.size
+      val twoToTheN = scala.math.pow(2, listSizeI).toInt;
+      val combinationMaskL = List.range(1, twoToTheN)
+        .map { x => normalizeToLength(x.toBinaryString, listSizeI) }
           .filter { x => getOnesCount(x) == 3 }
       
-      logger.info(foo + "")
+      logger.info(combinationMaskL + "")
       
       return List(List('a))
   }
   
   
   /**
-   * returns the number of ones in a binary string. 
+   * returns the number of ones in a normalized binary string. 
    * thank you SO: http://stackoverflow.com/a/8910767
    * 
    */
-  def getOnesCount(line: String, nomralizedLength:Int): Int = {
-    val foo = line.length - line.replace("0", "").length
-    
-    if (foo == 3) {logger.info(foo + " " + line.length + " " + line.replace("0", "").length)};
-    return foo
+  def getOnesCount(asBinaryNormalized: String): Int = {
+    asBinaryNormalized.length - asBinaryNormalized.replace("0", "").length
+  }
+  
+
+  /**
+   * normalizes a binary string to a given length. 
+   * thank you SO: http://stackoverflow.com/a/2807731/2234770
+   */
+  def normalizeToLength(asBinaryRaw:String, normalizedLength:Int): String = {
+    val sizeDiffI = normalizedLength - asBinaryRaw.length()
+    new String(new Array[Char](sizeDiffI)).replace('\0', '0') + asBinaryRaw
   }
   
   
-  
-  
 }
+
+
+
+
