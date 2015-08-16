@@ -30,8 +30,23 @@ class Sp26 extends SpMeta {
   
   val input = (3, List('a, 'b, 'c, 'd, 'e, 'f))
  
+  /**
+   * There are many ways to enumerate k combinations. One way is to visit all 
+   * the binary numbers less than 2^n. Choose those numbers having k nonzero 
+   * bits. The positions of these 1 bits in such a number is a specific 
+   * k-combination of the set {1,...,n}
+   * 
+   * 2^6 = 64
+   * 
+   * 
+   * 
+   * 
+   */
+  
+  
+  
   def getSolution: solutionT = {
-
+    combinations(input)
   }
 
   
@@ -41,7 +56,23 @@ class Sp26 extends SpMeta {
 
   
   def combinations(input: inputT): solutionT = {
+      val foo = List.range(1, input._2.size + 1)
+        .map { x => x.toBinaryString }
+          //.filter { x => getOnesCount(x) == 3 }
       
+      logger.info(foo + "")
+      
+      return List(List('a))
+  }
+  
+  
+  /**
+   * returns the number of ones in a binary string. 
+   * thank you SO: http://stackoverflow.com/a/8910767
+   * 
+   */
+  def getOnesCount(line: String): Int = {
+    line.length - line.replace("0", "").length
   }
   
   
