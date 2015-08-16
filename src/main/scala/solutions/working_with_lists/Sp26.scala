@@ -58,10 +58,19 @@ class Sp26 extends SpMeta {
   def combinations(input: inputT): solutionT = {
       val listSizeI = input._2.size
       val twoToTheN = scala.math.pow(2, listSizeI).toInt;
+      
+      // create a list of sequential numbers from one to 2^listSize
+      // convert the members of that list to a set of normalized binary strings
+      // filter out all the ones who don't have exactly three '1s
       val combinationMaskL = List.range(1, twoToTheN)
         .map { x => normalizeToLength(x.toBinaryString, listSizeI) }
           .filter { x => getOnesCount(x) == 3 }
       
+      
+      
+      
+      logger.info(combinationMaskL.size + "")   
+          
       logger.info(combinationMaskL + "")
       
       return List(List('a))
