@@ -65,13 +65,11 @@ class Sp26 extends SpMeta {
       val combinationMaskL = List.range(1, twoToTheN)
         .map { x => normalizeToLength(x.toBinaryString, listSizeI) }
           .filter { x => getOnesCount(x) == 3 }
-      
-      
-      
-      
-      logger.info(combinationMaskL.size + "")   
-          
+                
       logger.info(combinationMaskL + "")
+      
+      
+      
       
       return List(List('a))
   }
@@ -94,6 +92,29 @@ class Sp26 extends SpMeta {
   def normalizeToLength(asBinaryRaw:String, normalizedLength:Int): String = {
     val sizeDiffI = normalizedLength - asBinaryRaw.length()
     new String(new Array[Char](sizeDiffI)).replace('\0', '0') + asBinaryRaw
+  }
+  
+  
+  /**
+   * takes a binary string as a mask value and creates a List[Int] containing
+   * indices.
+   */
+  def comboMaskToIntList(mask:String, nextIndexOf: Int): List[Int] = {
+    
+    if (nextIndexOf == -1) Nil
+    else {
+      mask.charAt(nextIndexOf) :: 
+        comboMaskToIntList(mask, mask.indexOf('1', nextIndexOf))
+    }  
+    
+  }
+  
+  
+  def enumerateCombos(combinationMaskL: List[String], index:Int): solutionT = {
+    
+    
+    
+    
   }
   
   
