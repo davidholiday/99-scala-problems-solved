@@ -29,7 +29,7 @@ class Sp25 extends SpMeta {
 
   
   def checkSolution(solution: solutionT): Unit = {
-    //logger.info(solution + "")
+    logger.trace(solution + "")
     
     // ensure solution is the correct size
     assert(solution.size == input.size)   

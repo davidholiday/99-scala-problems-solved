@@ -20,30 +20,19 @@ import solutions._
  * 
  *   
  * aug'15 david holiday
+ * 
+ * using the binary method of enumaration -- 
+ * see https://en.wikipedia.org/wiki/Combination
+ * 
  */
 
-
 class Sp26 extends SpMeta {
-
   type inputT = (Int, List[Symbol])
   type solutionT = List[List[Symbol]]
   
   val input = (3, List('a, 'b, 'c, 'd, 'e, 'f))
  
-  /**
-   * There are many ways to enumerate k combinations. One way is to visit all 
-   * the binary numbers less than 2^n. Choose those numbers having k nonzero 
-   * bits. The positions of these 1 bits in such a number is a specific 
-   * k-combination of the set {1,...,n}
-   * 
-   * 2^6 = 64
-   * 
-   * 
-   * 
-   * 
-   */
-  
-  
+ 
   
   def getSolution: solutionT = {
     combinations(input)
@@ -51,10 +40,19 @@ class Sp26 extends SpMeta {
 
   
   def checkSolution(solution: solutionT): Unit = {
+    logger.trace(solution + "")
     
+    // ensure solution is the correct size
+    assert(solution.size == binomialCoefficient(input._2.size, input._1))   
+    
+    // ensure solution has only unique elements
+    assert(solution.distinct.size == solution.size)
   }
 
   
+  /**
+   * enumerate all combinations of c(n|k)
+   */
   def combinations(input: inputT): solutionT = {
       val listSizeI = input._2.size
       val twoToTheN = scala.math.pow(2, listSizeI).toInt;
@@ -65,20 +63,19 @@ class Sp26 extends SpMeta {
       val combinationMaskL = List.range(1, twoToTheN)
         .map { x => normalizeToLength(x.toBinaryString, listSizeI) }
           .filter { x => getOnesCount(x) == 3 }
-                
-      logger.info(combinationMaskL + "")
-      
-      
-      
-      
-      return List(List('a))
+     
+      // convert binary masks to lists of indexes
+      val indexL = 
+        combinationMaskL.map { x => comboMaskToIntList(x, x.indexOf('1')) }
+
+      // use list of indexes to create combination enumeration
+      indexL.map { x => indexLToSymbolL(x, input._2) }
   }
   
   
   /**
    * returns the number of ones in a normalized binary string. 
    * thank you SO: http://stackoverflow.com/a/8910767
-   * 
    */
   def getOnesCount(asBinaryNormalized: String): Int = {
     asBinaryNormalized.length - asBinaryNormalized.replace("0", "").length
@@ -102,21 +99,31 @@ class Sp26 extends SpMeta {
   def comboMaskToIntList(mask:String, nextIndexOf: Int): List[Int] = {
     
     if (nextIndexOf == -1) Nil
-    else {
-      mask.charAt(nextIndexOf) :: 
-        comboMaskToIntList(mask, mask.indexOf('1', nextIndexOf))
+    else {     
+      nextIndexOf :: 
+        comboMaskToIntList(mask, mask.indexOf('1', nextIndexOf + 1))
     }  
     
   }
   
   
-  def enumerateCombos(combinationMaskL: List[String], index:Int): solutionT = {
-    
-    
-    
-    
+  /**
+   * creates a combination list by matching the index list to the 
+   * master symbol list
+   */
+  def indexLToSymbolL(
+      indexL: List[Int], masterSymbolL: List[Symbol]): List[Symbol] = {
+      List.tabulate(indexL.length)(x => masterSymbolL(indexL(x)))    
   }
   
+  
+  /**
+   * calculates binomial coefficient
+   * t/y rosetta code
+   * http://rosettacode.org/wiki/Evaluate_binomial_coefficients#Scala
+   */
+  def binomialCoefficient(n:Int, k:Int)=fact(n) / (fact(k) * fact(n-k))
+  def fact(n:Int):Int=if (n==0) 1 else n*fact(n-1)
   
 }
 
