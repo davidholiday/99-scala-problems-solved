@@ -68,7 +68,7 @@ class Sp9999 extends SpMeta {
 	      .toList
 
 	  if (processedStringList1.length == processedStringList2.length) {
-		  return (processedStringList1.par.sum.equals(processedStringList2.par.sum));
+		  return (processedStringList1.par.sum.equals(processedStringList2.par.sum))
 	  }
 	  else {
 		  return false
