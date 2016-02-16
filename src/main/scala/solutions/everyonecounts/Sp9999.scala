@@ -54,21 +54,27 @@ class Sp9999 extends SpMeta {
    * number of symbol types by comparing their sums. 
    */
   def compareStrings(inputTuple:(String, String)): Boolean = {
-    
-	  val sum1 = inputTuple._1
-                         .par
-                         .map(x => x.toLower)
-			                   .filter {x => x.toString() matches "([a-z])"}
-	                       .sum
 
+	  val processedString1 = inputTuple._1
+			  .par
+			  .map(x => x.toLower)
+			  .filter {x => x.toString() matches "([a-z])"}
+	      .toList
 
-	  val sum2 = inputTuple._2
-                         .par
-	                       .map(x => x.toLower)
-	                       .filter {x => x.toString() matches "([a-z])"}
-	                       .sum
-                         
-	  return (sum1.equals(sum2));
+	  val processedString2 = inputTuple._2
+	      .par
+	      .map(x => x.toLower)
+	      .filter {x => x.toString() matches "([a-z])"}
+	      .toList
+
+	  if (processedString1.length == processedString2.length) {
+		  return (processedString1.par.sum.equals(processedString2.par.sum));
+	  }
+	  else {
+		  return false
+	  }                     
+
+	  
   }
 
   
