@@ -55,20 +55,20 @@ class Sp9999 extends SpMeta {
    */
   def compareStrings(inputTuple:(String, String)): Boolean = {
 
-	  val processedString1 = inputTuple._1
+	  val processedStringList1 = inputTuple._1
 			  .par
 			  .map(x => x.toLower)
 			  .filter {x => x.toString() matches "([a-z])"}
 	      .toList
 
-	  val processedString2 = inputTuple._2
+	  val processedStringList2 = inputTuple._2
 	      .par
 	      .map(x => x.toLower)
 	      .filter {x => x.toString() matches "([a-z])"}
 	      .toList
 
-	  if (processedString1.length == processedString2.length) {
-		  return (processedString1.par.sum.equals(processedString2.par.sum));
+	  if (processedStringList1.length == processedStringList2.length) {
+		  return (processedStringList1.par.sum.equals(processedStringList2.par.sum));
 	  }
 	  else {
 		  return false
