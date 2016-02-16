@@ -57,14 +57,14 @@ class Sp9999 extends SpMeta {
 
 	  val processedStringList1 = inputTuple._1
 			  .par
-			  .map(x => x.toLower)
-			  .filter {x => x.toString() matches "([a-z])"}
+        .filter {x => x.toString() matches "([a-z])"}
+			  .map(x => x.toLower)		  
 	      .toList
 
 	  val processedStringList2 = inputTuple._2
 	      .par
-	      .map(x => x.toLower)
-	      .filter {x => x.toString() matches "([a-z])"}
+        .filter {x => x.toString() matches "([a-z])"}
+	      .map(x => x.toLower)      
 	      .toList
 
 	  if (processedStringList1.length == processedStringList2.length) {
