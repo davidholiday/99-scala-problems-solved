@@ -54,6 +54,7 @@ class Sp26 extends SpMeta {
    * enumerate all combinations of c(n|k)
    */
   def combinations(input: inputT): solutionT = {
+      val kSize = input._1
       val listSizeI = input._2.size
       val twoToTheN = scala.math.pow(2, listSizeI).toInt;
       
@@ -62,7 +63,7 @@ class Sp26 extends SpMeta {
       // filter out all the ones who don't have exactly three '1s
       val combinationMaskL = List.range(1, twoToTheN)
         .map { x => normalizeToLength(x.toBinaryString, listSizeI) }
-          .filter { x => getOnesCount(x) == 3 }
+          .filter { x => getOnesCount(x) == kSize }
      
       // convert binary masks to lists of indexes
       val indexL = 
