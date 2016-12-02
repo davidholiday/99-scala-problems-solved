@@ -1,4 +1,4 @@
-package solutions.everyonecounts
+package solutions.other
 
 import solutions._
 import scala.collection.mutable.ListBuffer
